@@ -30,7 +30,7 @@ class App{
         })
     }
     adicionarTarefa(){
-        const input = document.getElementById("campo-titulo") as HTMLInputElement;
+        const input = document.getElementById("campo-tarefa") as HTMLInputElement;
         const titulo = input.value;
         const textarea = document.getElementById("campo-descricao") as HTMLTextAreaElement;
         const descricao = textarea.value;

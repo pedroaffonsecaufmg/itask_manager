@@ -30,7 +30,7 @@ class App {
         });
     }
     adicionarTarefa() {
-        const input = document.getElementById("campo-titulo");
+        const input = document.getElementById("campo-tarefa");
         const titulo = input.value;
         const textarea = document.getElementById("campo-descricao");
         const descricao = textarea.value;
