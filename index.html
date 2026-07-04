@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itask Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header> 
+        <h1>Itask Manager</h1>
+    </header>
+    <main>
+        <section>
+            <input type ="text" id="campo-tarefa" placeholder="Nome da tarefa">
+            <textarea id="campo-descricao" placeholder="Descricao"></textarea>
+            <button id="botao-adicionar">Nova Tarefa</button>
+        </section>
+        <section>
+            <p>Tarefas concluídas: <span id="contador">0 de 0</span></p>
+            <ul id="listaTarefas"></ul>
+        </section>
+    </main>
+    <script src="app.js" defer></script>
+</body>
+</html>
