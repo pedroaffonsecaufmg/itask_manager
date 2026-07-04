@@ -37,6 +37,8 @@ class App {
         const tarefa = new Tarefa(titulo, descricao);
         this.tarefas.push(tarefa);
         this.renderizarLista();
+        input.value = "";
+        textarea.value = "";
     }
     renderizarLista() {
         const lista = document.getElementById("listaTarefas");
@@ -44,6 +46,25 @@ class App {
         for (const tarefa of this.tarefas) {
             lista.innerHTML += tarefa.renderizar();
         }
+        const contador = document.getElementById("contador");
+        const concluidas = this.tarefas.filter(t => t.concluida).length;
+        contador.innerText = `${concluidas} de ${this.tarefas.length}`;
+        const checkbox = lista.querySelectorAll("input[type = 'checkbox']");
+        checkbox.forEach((box, i) => {
+            box.addEventListener("change", () => {
+                const li = box.closest("li");
+                if (box.checked) {
+                    li?.classList.add("concluida");
+                }
+                else {
+                    li?.classList.remove("concluida");
+                }
+                this.tarefas[i].concluida = box.checked;
+                const contador = document.getElementById("contador");
+                const concluidas = this.tarefas.filter(t => t.concluida).length;
+                contador.innerText = `${concluidas} de ${this.tarefas.length}`;
+            });
+        });
     }
 }
 const app = new App();
